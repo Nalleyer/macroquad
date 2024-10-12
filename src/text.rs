@@ -103,7 +103,7 @@ impl Font {
         let (metrics, bitmap) = self.font.rasterize(character, size as f32);
 
         if metrics.advance_height != 0.0 {
-            panic!("Vertical fonts are not supported");
+            log::warn!("Vertical fonts are not supported");
         }
 
         let (width, height) = (metrics.width as u16, metrics.height as u16);
